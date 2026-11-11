@@ -1,0 +1,66 @@
+
+
+{
+  "schema_version": "1.0.0",
+  "description": "Spät Capstone - Ball Tracking Data Schema",
+
+  "coordinate_system": {
+    "frame": "pitch_center",
+    "unit": "meters",
+    "origin": "center",
+    "field_length_m": 105.0,
+    "field_width_m": 68.0
+  },
+
+  "sampling_rate_hz": 10,
+
+  "required_fields": {
+    "match_id": "string",
+    "ball_id": "string",
+    "source": "string",
+    "timestamp": "float",
+    "captured_at_utc": "ISO8601_UTC",
+    "frame_id": "integer",
+    "position": {
+      "x": "float_or_null",
+      "y": "float_or_null"
+    },
+    "coordinate_frame": "string",
+    "position_unit": "string",
+    "status": "string",
+    "confidence": "float_or_null",
+    "last_observed_time": "float_or_null",
+    "uncertainty": "object_or_null"
+  },
+
+  "allowed_status": [
+    "observed",
+    "predicted",
+    "missing"
+  ],
+
+  "confidence_range": {
+    "min": 0.0,
+    "max": 1.0
+  },
+
+  "uncertainty_fields": {
+    "sigma_x_m": "float",
+    "sigma_y_m": "float"
+  },
+
+  "validation_rules": {
+    "timestamp_min": 0.0,
+    "frame_id_min": 0,
+    "position_required_for": [
+      "observed",
+      "predicted"
+    ],
+    "position_null_for": [
+      "missing"
+    ],
+    "last_observed_time_max": "timestamp",
+    "coordinate_frame_must_match": "coordinate_system.frame",
+    "position_unit_must_match": "coordinate_system.unit"
+  }
+}

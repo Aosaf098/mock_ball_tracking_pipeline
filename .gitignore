@@ -1,0 +1,99 @@
+
+# ==========================================
+# Mock_Ball_Tracking_Pipeline
+# ==========================================
+
+# Datasets and collected data
+data/
+datasets/
+raw_data/
+processed_data/
+recordings/
+logs/
+*.csv
+*.parquet
+*.db
+*.sqlite
+*.sqlite3
+
+# Keep small example datasets if needed
+!examples/*.csv
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials.json
+secrets.json
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+dist/
+build/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# ML models and checkpoints
+models/
+checkpoints/
+runs/
+wandb/
+mlruns/
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.h5
+*.pkl
+*.joblib
+
+# Node.js / Frontend
+node_modules/
+.next/
+.nuxt/
+coverage/
+.vite/
+*.tsbuildinfo
+
+# ROS 2 (if applicable)
+install/
+log/
+colcon_ws/build/
+colcon_ws/install/
+colcon_ws/log/
+
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Operating system
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporary files
+tmp/
+temp/
+cache/
+*.tmp
+*.log
+
+# Archive files
+*.zip
+*.tar
+*.tar.gz
+*.7z
